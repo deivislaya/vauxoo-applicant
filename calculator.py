@@ -12,5 +12,7 @@ class CalculatorClass(object):
         """
         Your method documentation here
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        total = 0
+        for num in num_list:
+            total = total + num
+        return total
