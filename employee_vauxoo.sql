@@ -76,6 +76,7 @@ INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (4,1);
 INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (4,3);
 
 
+
 ALTER TABLE employee
    ADD COLUMN jefe_id integer;
 
@@ -84,5 +85,11 @@ ALTER TABLE employee
    ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_fky_jefe
   ON employee(jefe_id);
+
+ALTER TABLE employee
+  ADD CONSTRAINT chk_jefe
+  CHECK (id <> jefe_id);
+
+UPDATE employee SET jefe_id = 1 where id <> 1
 
 -- ...
