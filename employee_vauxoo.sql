@@ -57,7 +57,6 @@ INSERT INTO employee_hobby (name,description) VALUES ('Playa', 'Cayo Sombrero');
 INSERT INTO employee_hobby (name,description) VALUES ('Video Juego', 'Warcraft');
 
 CREATE TABLE employee_hobby_relation (
-  id serial NOT NULL,
   employee_id integer,
   hobby_id integer
 );
