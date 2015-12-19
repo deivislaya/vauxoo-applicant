@@ -47,6 +47,10 @@ INSERT INTO employee_department (name,description) VALUES ('Produccion', 'Desarr
 INSERT INTO employee_department (name,description) VALUES ('Talento Humano', 'Administracion de Personal');
 INSERT INTO employee_department (name,description) VALUES ('Tecnologia', 'Administracion de Computadores');
 
+INSERT INTO employee (first_name, last_name, departament_id) VALUES ('Deivis', 'Laya', 1);
+INSERT INTO employee (first_name, last_name, departament_id) VALUES ('Yenifer', 'Santiago', 2);
+INSERT INTO employee (first_name, last_name, departament_id) VALUES ('Hernan', 'Neuman', 3);
+INSERT INTO employee (first_name, last_name, departament_id) VALUES ('Edgar', 'Camejo', 4);
 
 INSERT INTO employee_hobby (name,description) VALUES ('Cine', 'Peliculas');
 INSERT INTO employee_hobby (name,description) VALUES ('Playa', 'Cayo Sombrero');
