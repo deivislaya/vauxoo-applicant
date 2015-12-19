@@ -22,9 +22,13 @@ ALTER TABLE employee_department
   ADD CONSTRAINT pkey_departament PRIMARY KEY (id);
 
 CREATE TABLE employee_hobby (
-
+  id serial NOT NULL,
+  name character varying,
+  description character varying
 );
 
+
+ALTER TABLE employee ADD COLUMN departament_id integer;
 
 ALTER TABLE employee
   ADD CONSTRAINT fkey_departament FOREIGN KEY (departament_id) REFERENCES employee_department (id)
@@ -40,9 +44,25 @@ INSERT INTO employee_department (name,description) VALUES ('Produccion', 'Desarr
 INSERT INTO employee_department (name,description) VALUES ('Talento Humano', 'Administracion de Personal');
 INSERT INTO employee_department (name,description) VALUES ('Tecnologia', 'Administracion de Computadores');
 
-INSERT INTO employee (first_name, last_name) VALUES ('Deivis', 'Laya');
-INSERT INTO employee (first_name, last_name) VALUES ('Yenifer', 'Santiago');
-INSERT INTO employee (first_name, last_name) VALUES ('Hernan', 'Neuman');
-INSERT INTO employee (first_name, last_name) VALUES ('Edgar', 'Camejo');
+INSERT INTO employee_hobby (name,description) VALUES ('Cine', 'Peliculas');
+INSERT INTO employee_hobby (name,description) VALUES ('Playa', 'Cayo Sombrero');
+INSERT INTO employee_hobby (name,description) VALUES ('Video Juego', 'Warcraft');
+
+CREATE TABLE employee_hobby_relation (
+  id serial NOT NULL,
+  employee_id integer,
+  hobby_id integer
+);
+
+
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (1,1);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (1,2);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (2,1);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (2,3);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (3,1);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (3,3);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (4,1);
+INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES (4,3);
+
 
 -- ...
